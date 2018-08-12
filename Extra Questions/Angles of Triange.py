@@ -29,7 +29,7 @@ if __name__ == '__main__':
     y2 = my_list[1][1]
     y3 = my_list[2][1]
 
-    #Finding Lengths of Sides
+    #Finding Length of Sides
     A = sqrt(((x1 - x2) ** 2) + ((y1 - y2) ** 2))
     B = sqrt(((x2 - x3) ** 2) + ((y2 - y3) ** 2))
     C = sqrt(((x3 - x1) ** 2) + ((y3 - y1) ** 2))
