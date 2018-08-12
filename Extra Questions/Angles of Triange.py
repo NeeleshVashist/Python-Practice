@@ -40,7 +40,7 @@ if __name__ == '__main__':
     gamma_angle = degrees(acos(((C ** 2) + (A ** 2) - (B ** 2))/(2.0 * C * A)))
 
     if(alpha_angle == 180 or beta_angle == 180 or gamma_angle == 180):
-        print('\nEntered coordinates are not forming triangle')
+        print('\nEntered Coordinates are NOT forming Triangle')
     else:
         print('\nAngles are : ')
         print('Alpha :',round(alpha_angle))
