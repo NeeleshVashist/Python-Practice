@@ -27,14 +27,19 @@ if __name__ == '__main__':
         my_list.append(new_list)
         new_list = []
 
-    X = my_list[-2][0] + 1
-    Y = my_list[-2][0] + 1
+    diff_x = my_list[-2][0] - my_list[-3][0]
+    diff_y = my_list[-2][1] - my_list[-3][1]
+
+    X = my_list[-2][0] + diff_x
+    Y = my_list[-2][1] + diff_y
     coordinate_list.append(X)
     coordinate_list.append(Y)
     angle_list.append(coordinate_list)
     angle_list.append(my_list[-2])
     angle_list.append(my_list[-1])
 
+    print(angle_list)
+    
     x1 = angle_list[0][0]
     x2 = angle_list[1][0]
     x3 = angle_list[2][0]
