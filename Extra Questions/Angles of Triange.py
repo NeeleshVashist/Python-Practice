@@ -5,17 +5,10 @@
 from math import acos, degrees, sqrt
 
 if __name__ == '__main__':
-    n = int(input('Enter No. of Coordinates : '))
+    n = 3
     my_list = []
     new_list = []
-    coordinate_list = []
-    angle_list = []
     side_list = []
-
-    while(n < 3):
-        print('Minimum 3 Coordinates required')
-        print('TRY AGAIN')
-        n = int(input('Enter No. of Coordinates : '))
 
     for i in range(n):
         coordinates = input('Enter Coordinates(separated by a space) : ')
@@ -27,25 +20,14 @@ if __name__ == '__main__':
         my_list.append(new_list)
         new_list = []
 
-    diff_x = my_list[-2][0] - my_list[-3][0]
-    diff_y = my_list[-2][1] - my_list[-3][1]
+    print('\nEntered Coordinates are :',my_list)
 
-    X = my_list[-2][0] + diff_x
-    Y = my_list[-2][1] + diff_y
-    coordinate_list.append(X)
-    coordinate_list.append(Y)
-    angle_list.append(coordinate_list)
-    angle_list.append(my_list[-2])
-    angle_list.append(my_list[-1])
-
-    print(angle_list)
-    
-    x1 = angle_list[0][0]
-    x2 = angle_list[1][0]
-    x3 = angle_list[2][0]
-    y1 = angle_list[0][1]
-    y2 = angle_list[1][1]
-    y3 = angle_list[2][1]
+    x1 = my_list[0][0]
+    x2 = my_list[1][0]
+    x3 = my_list[2][0]
+    y1 = my_list[0][1]
+    y2 = my_list[1][1]
+    y3 = my_list[2][1]
 
     #Finding Lengths of Sides
     A = sqrt(((x1 - x2) ** 2) + ((y1 - y2) ** 2))
@@ -57,4 +39,10 @@ if __name__ == '__main__':
     beta_angle = degrees(acos(((B ** 2) + (C ** 2) - (A ** 2))/(2.0 * B * C)))
     gamma_angle = degrees(acos(((C ** 2) + (A ** 2) - (B ** 2))/(2.0 * C * A)))
 
-    print(round(alpha_angle), round(beta_angle), round(gamma_angle))
+    if(alpha_angle == 180 or beta_angle == 180 or gamma_angle == 180):
+        print('\nEntered coordinates are not forming triangle')
+    else:
+        print('\nAngles are : ')
+        print('Alpha :',round(alpha_angle))
+        print('Beta :',round(beta_angle))
+        print('Gamma :',round(gamma_angle))
