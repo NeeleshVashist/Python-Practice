@@ -10,9 +10,13 @@ year = int(input('Enter Year : '))
 month = int(input('Enter Month : '))
 date = int(input('Enter Date : '))
 
+#To get the calendar of year
 m = calendar.month(year,month,2,1)
+
+#weekday is used to get day number
 d = calendar.weekday(year,month,date)
 
+#strftime("%a, %d. %B, %y"  -> %a = day, %d = date, %B = Month, %y = Year)
 now = datetime.datetime.now()
 day = now.strftime("%a")
 
